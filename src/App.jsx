@@ -1,16 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import AddTodo from "./components/AddTodo/AddTodo";
+import TodoList from "./components/TodoList/TodoList";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const[list , setList] = useState([
+    {id:1, todoData:'todo 1' , finished:false},
+    {id:2, todoData:'todo 2' , finished:false},
+  ])
 
   return (
     <>
-      
+      <AddTodo updateList={(todo) => setList([
+        ...list ,
+        {id:(list.length + 1),
+          todoData:todo,
+          finished: false
+        }
+      ])}/>
+      <TodoList list = {list}/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
