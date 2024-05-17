@@ -12,7 +12,7 @@ function App() {
   ])
 
   return (
-    <TodoContext.Provider >
+    <TodoContext.Provider value={{list,setList}}>
       <AddTodo updateList={(todo) => setList([
         ...list ,
         {id:(list.length + 1),
@@ -20,7 +20,7 @@ function App() {
           finished: false
         }
       ])}/>
-      <TodoList list = {list} updateList= {setList}/>
+      <TodoList />
     </TodoContext.Provider>
   );
 }
