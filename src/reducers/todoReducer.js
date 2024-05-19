@@ -1,4 +1,6 @@
-function todoReducer(state, action) {
+const initialState = []
+
+function todoReducer(state = initialState, action) {
   if (action.type == "add_todo") {
     let todoText = action.payload.todoText;
     return [
@@ -32,6 +34,7 @@ function todoReducer(state, action) {
     });
     return updatedList;
   }
+  return state;
 }
 
 export default todoReducer;
