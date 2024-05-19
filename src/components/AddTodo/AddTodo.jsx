@@ -1,10 +1,9 @@
 import {  useState } from "react";
 import { useDispatch } from "react-redux";
+import { addTodo } from "../../slicers/todoSlice";
 
 function AddTodo() {
   const [inputText, setInputText] = useState("");
-  const dispatch = useDispatch();
-
   return (
     <div>
       <input
@@ -15,7 +14,7 @@ function AddTodo() {
       />
       <button
         onClick={() => {
-          dispatch({ type: "add_todo", payload: { todoText: inputText } });
+          addTodo({todoText: inputText});
           setInputText("");
         }}
       >

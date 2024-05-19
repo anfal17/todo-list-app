@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import Todo from "../Todo/Todo";
 
 function TodoList({editTodo , deleteTodo , todoFinished}) {
-  const  list  = useSelector((state)=> state.todo);
+  const  list  = useSelector((state)=> state.todo.todoList)|| [];
 
   function onFinished(todo, isFinished) {
     todoFinished(todo , isFinished)

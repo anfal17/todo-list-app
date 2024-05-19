@@ -3,12 +3,7 @@ import "./App.css";
 import AddTodo from "./components/AddTodo/AddTodo";
 import TodoList from "./components/TodoList/TodoList";
 import { useDispatch } from "react-redux";
-import {
-  addTodo,
-  deleteTodo,
-  editTodo,
-  todoFinished,
-} from "./actions/todoActions";
+import todoReducer ,{ addTodo , editTodo, deleteTodo, todoFinished } from "./slicers/todoSlice";
 
 function App() {
   const dispatch = useDispatch();
